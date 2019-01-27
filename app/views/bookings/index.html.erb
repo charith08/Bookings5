@@ -1,0 +1,29 @@
+<% provide(:title, "View My Bookings") %>
+
+<h1>View My Meetings</h1>
+
+<table  class="table">
+  <thead class="thead-dark">
+    <tr>
+
+      <th>Room</th>
+      <th>Start</th>
+      <th>End</th>
+      <th colspan="3"></th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= get_room_name(booking.room_id) %></td>
+        <td><%= readable_time(booking.start_time)%></td>
+        <td><%= readable_time(booking.end_time)%></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
+
+<br>

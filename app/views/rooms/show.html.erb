@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @room.name %>
+</p>
+
+<p>
+  <strong>Capacity:</strong>
+  <%= @room.capacity %>
+</p>
+
+
+<%= render @room.bookings %>
+
+
+<% if is_admin? %>
+<% else %>
+<%= link_to 'Create a new Meeting', new_room_booking_path(@room) %>
+<% end %>

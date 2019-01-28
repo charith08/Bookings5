@@ -17,7 +17,11 @@ class Booking < ApplicationRecord
 
   def valide
     (!end_time.nil? && end_time.to_time.hour<=20) ? true : errors.add(:end_time)
+    if (end_time.to_time.hour < start_time.to_time.hour + 1800)
+      errors.add(:end_time, "should be greater or equal to 30min")
+    end
   end
+
 
 
 

@@ -19,5 +19,3 @@ User.create!(name:  "Charith",
                                        password_confirmation: "foobar",
                                        activated: true,
                                        activated_at: Time.zone.now)
-
-                 
